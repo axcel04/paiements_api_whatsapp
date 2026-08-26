@@ -290,17 +290,9 @@ whatsappBtn.addEventListener("click", function () {
 
 
     // Message préparé automatiquement
-    const texte = `Bonjour,
+    const texte = `
 
-Je vous contacte concernant un paiement.
-
-Nom : ${nom}
-Prénom : ${prenom}
-Montant : ${montant} BIF
-Référence : ${reference}
-Motif : ${motif}
-
-Merci.`;
+`;
 
 
     const url =
