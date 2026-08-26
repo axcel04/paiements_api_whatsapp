@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestion des paiements</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Gestion des paiements</h1>
+            <p>Enregistrement et suivi des paiements</p>
+        </header>
+		
+<!-- =====================================================
+     MÉTÉO DE LA POSITION DE L'UTILISATEUR
+===================================================== -->
+
+<section class="weather-card">
+
+    <div class="weather-icon" id="weatherIcon">
+        🌤️
+    </div>
+
+    <div class="weather-info">
+
+        <h2>
+            Météo de votre position
+        </h2>
+
+        <p class="weather-location" id="weatherLocation">
+            📍 Recherche de votre position...
+        </p>
+
+        <div class="temperature">
+            <span id="temperature">--</span>°C
+        </div>
+
+        <p id="weatherDescription">
+            Autorisez la localisation pour obtenir la météo.
+        </p>
+
+        <div class="weather-data">
+
+            <p class="weather-details">
+                💧 Humidité :
+                <strong>
+                    <span id="humidity">--</span>%
+                </strong>
+            </p>
+
+            <p class="weather-details">
+                💨 Vent :
+                <strong>
+                    <span id="windSpeed">--</span> km/h
+                </strong>
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            id="refreshWeatherBtn"
+            class="weather-refresh-btn"
+        >
+            🔄 Actualiser la météo
+        </button>
+
+    </div>
+
+</section>
+
+
+        <section class="card">
+
+            <h2>Formulaire de paiement</h2>
+
+            <form id="paymentForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="nom">Nom du client</label>
+                        <input
+                            type="text"
+                            id="nom"
+                            placeholder="Ex : Iradukunda"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prenom">Prénom</label>
+                        <input
+                            type="text"
+                            id="prenom"
+                            placeholder="Ex : Axcel"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telephone">Téléphone</label>
+                        <input
+                            type="tel"
+                            id="telephone"
+                            placeholder="Ex : 61118110"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="montant">Montant</label>
+                        <input
+                            type="number"
+                            id="montant"
+                            placeholder="Ex : 50000"
+                            min="0"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modePaiement">Mode de paiement</label>
+
+                        <select id="modePaiement" required>
+                            <option value="">-- Choisir --</option>
+                            <option value="Cash">Cash</option>
+                            <option value="Lumicash">Lumicash</option>
+                            <option value="Ecocash">Ecocash</option>
+                            <option value="Banque">Banque</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reference">Référence</label>
+
+                        <input
+                            type="text"
+                            id="reference"
+                            placeholder="Ex : PAY-001"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="datePaiement">Date de paiement</label>
+
+                        <input
+                            type="date"
+                            id="datePaiement"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="motif">Motif</label>
+
+                        <input
+                            type="text"
+                            id="motif"
+                            placeholder="Ex : Frais scolaires"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <div class="buttons">
+
+                    <button type="submit" class="btn btn-primary">
+                        Enregistrer le paiement
+                    </button>
+
+                    <button
+                        type="button"
+                        id="whatsappBtn"
+                        class="btn btn-whatsapp"
+                    >
+                        WhatsApp
+                    </button>
+
+                    <button
+                        type="button"
+                        id="clearBtn"
+                        class="btn btn-danger"
+                    >
+                        Vider les données locales
+                    </button>
+
+                </div>
+
+            </form>
+
+            <p id="message"></p>
+
+        </section>
+
+
+        <section class="card">
+
+            <div class="table-header">
+                <h2>Historique des paiements</h2>
+
+                <strong>
+                    Total :
+                    <span id="totalMontant">0</span> BIF
+                </strong>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Téléphone</th>
+                            <th>Montant</th>
+                            <th>Mode</th>
+                            <th>Référence</th>
+                            <th>Date</th>
+                            <th>Motif</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="paymentTableBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
