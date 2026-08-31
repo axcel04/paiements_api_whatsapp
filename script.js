@@ -5,7 +5,6 @@
 const GOOGLE_SCRIPT_URL =
     "https://script.google.com/macros/s/AKfycbyvRZ48cVmOIAq9rmtRaG9kjwpbyYiC-zauqsYe1Vpdzvdn7nf98tEzj2pbd7SnbdGk/exec";
 
-
 // =====================================================
 // RÉCUPÉRATION DES ÉLÉMENTS HTML
 // =====================================================
@@ -450,7 +449,7 @@ async function chargerMeteo() {
     try {
 
         weatherLocation.textContent =
-            "📍 Recherche de votre position...";
+            " Recherche de votre position...";
 
         weatherDescription.textContent =
             "Chargement de la météo...";
@@ -563,7 +562,7 @@ async function chargerMeteo() {
 
 
         weatherLocation.textContent =
-            "📍 Position indisponible";
+            " Position indisponible";
 
 
         temperature.textContent =
@@ -579,7 +578,7 @@ async function chargerMeteo() {
 
 
         weatherIcon.textContent =
-            "❌";
+            "";
     }
 }
 
@@ -689,7 +688,7 @@ async function afficherNomPosition(
 
 
         weatherLocation.textContent =
-            `📍 ${localisation}`;
+            `${localisation}`;
 
 
     } catch (error) {
@@ -701,7 +700,7 @@ async function afficherNomPosition(
 
 
         weatherLocation.textContent =
-            "📍 Votre position";
+            "Votre position";
     }
 }
 
@@ -716,7 +715,7 @@ function obtenirDescriptionMeteo(code) {
 
         return {
             description: "Ciel dégagé",
-            icon: "☀️"
+            icon: ""
         };
     }
 
@@ -725,7 +724,7 @@ function obtenirDescriptionMeteo(code) {
 
         return {
             description: "Principalement dégagé",
-            icon: "🌤️"
+            icon: ""
         };
     }
 
@@ -734,7 +733,7 @@ function obtenirDescriptionMeteo(code) {
 
         return {
             description: "Partiellement nuageux",
-            icon: "⛅"
+            icon: ""
         };
     }
 
@@ -743,7 +742,7 @@ function obtenirDescriptionMeteo(code) {
 
         return {
             description: "Couvert",
-            icon: "☁️"
+            icon: ""
         };
     }
 
@@ -755,7 +754,7 @@ function obtenirDescriptionMeteo(code) {
 
         return {
             description: "Brouillard",
-            icon: "🌫️"
+            icon: ""
         };
     }
 
@@ -767,7 +766,7 @@ function obtenirDescriptionMeteo(code) {
 
         return {
             description: "Bruine",
-            icon: "🌦️"
+            icon: "️"
         };
     }
 
@@ -779,7 +778,7 @@ function obtenirDescriptionMeteo(code) {
 
         return {
             description: "Pluie",
-            icon: "🌧️"
+            icon: ""
         };
     }
 
@@ -791,7 +790,7 @@ function obtenirDescriptionMeteo(code) {
 
         return {
             description: "Neige",
-            icon: "❄️"
+            icon: ""
         };
     }
 
@@ -803,7 +802,7 @@ function obtenirDescriptionMeteo(code) {
 
         return {
             description: "Averses",
-            icon: "🌦️"
+            icon: ""
         };
     }
 
@@ -815,14 +814,14 @@ function obtenirDescriptionMeteo(code) {
 
         return {
             description: "Orage",
-            icon: "⛈️"
+            icon: ""
         };
     }
 
 
     return {
         description: "Conditions inconnues",
-        icon: "🌤️"
+        icon: ""
     };
 }
 
